@@ -1,0 +1,6 @@
+interface:
+  display_name: "CSBL Academic Editing"
+  short_description: "Edit CSBL English manuscripts with rule_id-cited lab style rules"
+  default_prompt: "Use $csbl-academic-editing to edit this manuscript section, citing a rule_id for every change and checking style/* with lab-lint."
+policy:
+  allow_implicit_invocation: false
