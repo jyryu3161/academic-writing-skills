@@ -1,6 +1,6 @@
 interface:
   display_name: "CSBL Academic Editing"
-  short_description: "Edit CSBL English manuscripts with rule_id-cited lab style rules"
-  default_prompt: "Use $csbl-academic-editing to edit this manuscript section, citing a rule_id for every change and checking style/* with lab-lint."
+  short_description: "Edit every manuscript part to its own style profile, with a quality-score loop and 100% coverage"
+  default_prompt: "Use $csbl-academic-editing to edit this manuscript. Score and revise every present part (Abstract, Introduction, Methods, Results, Discussion, Conclusions, and figure/table legends) against that part's style profile in references/quality-score.md. Do not edit only some parts and leave others shallow. Cite a rule_id for every change, follow references/score-loop.md (coverage 100%, pass threshold ≥ 4.0, max 3 loops), and check style/* with lab-lint including --require-score-coverage."
 policy:
   allow_implicit_invocation: false
