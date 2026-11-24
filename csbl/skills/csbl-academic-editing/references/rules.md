@@ -1,8 +1,8 @@
 # rules — csbl-academic-editing 규칙 (rules.json에서 생성, 직접 고치지 말 것)
 
-- 판 0.1.1 (reviewed 2026-11-24 (r4/review-r3.md PASS), stage 4 v0.1.1), 2026-11-24. 규칙 26개: 기계 검사 10, 사람 판단 16.
+- 판 0.1.3 (reviewed 2026-11-24 (r4/review-r3.md PASS); professor-approved 2026-11-24 skill revisions: v0.1.2 quality-score loop; v0.1.3 all-part scoring (Abstract–Conclusions and legends) and style/score-coverage), 2026-11-24. 규칙 31개: 기계 검사 11, 사람 판단 20.
 - **목표값**: 새로 고치는 원고에는 프로파일의 2019–2026 값(31편)을 기본 목표로 쓴다. ALL(73편)·이전 연대 값은 비교용이다. 2019–2026 분리 값이 없는 규칙은 그렇게 적고 ALL을 참고로만 든다.
-- **우선순위**: CSBL-INTEG-01 and upstream universal integrity > target journal rules (CSBL-UNIT-01) > manuscript_eval core rubric (CORE-*) > CSBL style rules.
+- **우선순위**: CSBL-INTEG-01 and upstream universal integrity (preserve facts; improve wording and in-paragraph structure) > language-quality loop (CSBL-PROSE-01, CSBL-SCORE-01, CSBL-COVER-01, CSBL-PART-01) > confirmed manuscript facts and author instructions > target journal rules (CSBL-UNIT-01) > manuscript_eval core rubric (CORE-*) > domain checks (domain-overlay-bio.md) > other CSBL style rules.
 - **인용 의무**: 교정 제안·변경마다 rule_id를 적는다(`CSBL-…`, 또는 manuscript_eval `CORE-…`·`MOD-…`). 빈 칸은 lab-lint `style/edit-rule-id` 오류다.
 - 근거 표기 `SP-xx`·`profile §n`은 `profile/style_profile.md`(papers_style)의 관찰 번호·절이다. 수치는 어휘·정규식 신호 집계이며 표본 한계가 있다.
 
@@ -88,6 +88,14 @@
 - 비교: 연구실 내부 교정 기록(비공개)에는 rule_id·rubric_id 칸이 없었다
 - 근거: REQUEST.md 4단계, 연구실 내부 교정 기록(비공개)
 
+### CSBL-COVER-01
+- lint: `style/score-coverage` (error)
+- 영역: process
+- 규칙: 원고에 있는 모든 본문 파트(초록·서론·방법·결과·고찰 또는 결과·고찰 통합 절·결론)와 그림·표 범례의 본문 단락 100%를 채점하고, 문단 합격 100%를 충족한다. 일부 파트만 채점·수정하고 나머지를 얕게 두면 실패다. ‘이미 괜찮음’은 점수가 임계 이상일 때만 허용한다. 미채점은 오류다. 교정 기록 옆의 quality-coverage.json(또는 quality-scores.*)이 근거이며, lab-lint style/score-coverage가 검사한다. (적용 섹션: abstract, introduction, methods, results, discussion, conclusion, legends)
+- 목표(2019–2026): 존재하는 모든 해당 파트·범례 본문 단락 채점 100%, 문단 합격 100%
+- 비교: v0.1.2는 결과·고찰·결론만 커버리지 의무였고, 이전 패스는 lab-lint 커버리지 검사가 없었다
+- 근거: references/score-loop.md, references/quality-score.md, professor-approved skill revision 2026-11-24 (v0.1.3, all-part coverage)
+
 ## 2. 사람 판단 규칙
 
 ### CSBL-RES-02
@@ -134,7 +142,7 @@
 
 ### CSBL-VOICE-01
 - 영역: language
-- 규칙: 태와 인칭은 섹션에 맞춘다. 방법은 수동 중심이고 we를 거의 쓰지 않는다. 초록·고찰·결과에서는 능동과 we를 쓸 수 있으며 최근 값이 목표다. 기계적으로 태를 바꾸지 않는다. (적용 섹션: all)
+- 규칙: 태와 인칭·시제는 섹션에 맞춘다. 방법은 과거 시제·수동 중심이고 we를 거의 쓰지 않는다. 초록·고찰·결과에서는 능동과 we를 쓸 수 있으며 최근 값이 목표다. 기계적으로 태를 바꾸지 않는다. (적용 섹션: all)
 - 목표(2019–2026): 2019-2026: 초록 수동 34.3%·we 21.9%, 고찰 수동 34.5%·we 17.0%, 결과 수동 48.0%·we 11.6%, 방법 수동 88.4%·we 1.6% (방법 1,471문장)
 - 비교: 1998-2010 초록 수동 55.6%·we 4.9%; ALL 방법 수동 85.8%·we 1.0%
 - 근거: SP-05, SP-06, profile §2, §3
@@ -176,7 +184,7 @@
 
 ### CSBL-SENT-01
 - 영역: language
-- 규칙: 문장 길이 자체보다 구조를 본다. 40단어를 넘는 문장은 한 메시지인지 확인하고, 괄호·respectively·, which로 정리하거나 나눈다. (적용 섹션: all)
+- 규칙: 문장 길이 자체보다 구조를 본다. 40단어를 넘는 문장은 한 메시지인지 확인하고, 괄호·respectively·, which로 정리하거나 나눈다. 40단어 미만이어도 메시지가 둘 이상이거나 품질 점수의 논리·명확 차원이 임계 미만이면 나누거나 고친다. (적용 섹션: all)
 - 목표(2019–2026): 2019-2026 결과 문장 평균 26.5단어
 - 비교: ALL 섹션별 중앙 21-26, p90 39-42단어
 - 근거: profile §2, §3
@@ -197,7 +205,35 @@
 
 ### CSBL-INTEG-01
 - 영역: integrity
-- 규칙: 교정은 의미·수치·인용·고유명사를 바꾸지 않고, 주장 강도는 유지하거나 약화만 한다. 코퍼스·다른 논문 문장을 옮겨 쓰지 않는다. 저자만 확정할 수 있는 내용은 고치지 않고 질문으로 남긴다. (적용 섹션: all)
-- 목표(2019–2026): 새 숫자·인용·주장 강화 0건
+- 규칙: 교정은 사실(수치·단위·표본 수·p값·인용·고유명사·결과의 방향과 부정)을 바꾸지 않고, 주장 강도는 유지하거나 약화만 한다. 코퍼스·다른 논문 문장을 연속 8단어를 넘게 옮겨 쓰지 않는다. 저자만 확정할 수 있는 사실 공란(없는 수치·새 인용·새 결과 주장)은 고치지 않고 질문으로 남긴다. 이 규칙은 표현·문장 구조·문단 내부 배열을 그대로 두라는 뜻이 아니다. 같은 사실을 더 명확·간결·논리적으로 쓰는 언어·구조 개선은 필수이며, ‘의미가 비슷하니 둔다’는 이유로 통과하지 않는다. (적용 섹션: all)
+- 목표(2019–2026): 새 숫자·인용·주장 강화 0건; 표현 개선을 생략하지 않음
 - 비교: manuscript_eval 하드 게이트 3과 같은 원칙
 - 근거: manuscript_eval AGENTS.md 하드 게이트 3
+
+### CSBL-PROSE-01
+- 영역: language
+- 규칙: 모든 본문 파트(초록·서론·방법·결과·고찰·결론)와 그림·표 범례의 문장을, 그 파트의 기대 문체에 맞게 명확·간결·논리적으로 적극 교정한다. 문법 오류가 없어도 어색·장황·모호·연결 불명이면 같은 문단 안에서 재작성한다. 일부 파트만 손보고 나머지를 얕게 두지 않는다. 사실·수치·인용·주장 강도는 CSBL-INTEG-01을 따른다. (적용 섹션: abstract, introduction, methods, results, discussion, conclusion, legends)
+- 목표(2019–2026): 원고에 있는 모든 본문 파트와 범례의 문장 품질 점수 임계 통과(각 차원·평균 ≥ 4.0)
+- 비교: 이 규칙은 계량 프로파일 목표가 아니라 영어 교정 패스의 언어 품질 게이트다
+- 근거: references/quality-score.md, professor-approved skill revision 2026-11-24 (phase 1)
+
+### CSBL-SCORE-01
+- 영역: process
+- 규칙: references/quality-score.md의 문장·문단 점수를 파트별 기대 문체에 따라 매기고, 임계 미만인 단락은 통과할 때까지(최대 3루프) 다시 고친다. 자평만으로 끝내지 않고 검수 채점을 받는다. (적용 섹션: all)
+- 목표(2019–2026): 임계 미만 단락 0, 품질 루프 ≤ 3
+- 비교: 이전 영어 교정 패스는 lab-lint 기계 규칙과 rule_id 유무만 게이트로 썼다
+- 근거: references/quality-score.md, references/score-loop.md, professor-approved skill revision 2026-11-24 (phase 1)
+
+### CSBL-PART-01
+- 영역: language
+- 규칙: 교정·채점은 파트별로 한다. 각 파트의 기대 문체·용어·시제·구조(references/quality-score.md 파트 표)에 맞춘다. 초록은 간결하고 인용이 없는 것이 기본이며, 방법은 과거 시제·수동태를 허용하고, 결과는 보고, 고찰은 해석·문헌 비교, 결론은 요약, 범례는 간결한 명사구·짧은 절로 쓴다. 모든 본문 파트와 범례를 같은 기준으로 채점·교정하고, 특정 파트만 수정하고 나머지를 얕게 두는 것은 불합격이다. (적용 섹션: abstract, introduction, methods, results, discussion, conclusion, legends)
+- 목표(2019–2026): 존재하는 모든 파트·범례가 각 파트 기대 문체와 품질 임계를 충족
+- 비교: v0.1.2의 필수 커버리지는 결과·고찰·결론에 치우쳐 다른 파트가 얕게 남을 수 있었다
+- 근거: references/quality-score.md, professor-approved skill revision 2026-11-24 (v0.1.3, all-part style)
+
+### CSBL-LEGEND-01
+- 영역: legends
+- 규칙: 그림·표 범례(캐프션)는 간결한 명사구 또는 짧은 절로 쓰고, 패널·시료·조건, 표본 수 n, 통계·오차 정의를 담는다. 결과 해석을 길게 늘이지 않고 본문 논의에 둔다. 수치는 본문과 같게 유지하고 새 숫자를 넣지 않는다. (적용 섹션: legends)
+- 목표(2019–2026): 범례 각 항목이 조건·표기 위주이고 긴 논의가 없다
+- 비교: 2019-2026 분리 값 없음 (CORE-RES-13·14·20 참고)
+- 근거: references/quality-score.md, CORE-RES-13, CORE-RES-14
