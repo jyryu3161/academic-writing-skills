@@ -14,7 +14,7 @@
 ## 2. 초록
 - [ ] 목적 문장(Here, we … / In this study, we …)이 있다 **(기계)** — CSBL-ABS-01
 - [ ] 분량이 저널 한도 안이다. 한도 안에서는 최근 범위(103–248단어)를 참고한다 **(기계, info)** — CSBL-ABS-02
-- [ ] 배경 약 2문장 → 목적 → 수단(by + -ing) → 결과(병렬 수치는 respectively) → 함의 순서로 읽힌다 — CSBL-ABS-03
+- [ ] 배경 약 2문장 → 목적 → 수단(by + -ing) → 결과(병렬 수치는 respectively) → 함의 순서로 읽힌다. 간결하고 인용이 없는 것이 기본이다 — CSBL-ABS-03, CSBL-PART-01
 - [ ] 모든 수치가 본문과 같다(lab-lint `text/abstract-number`) — CSBL-INTEG-01
 - [ ] 태·인칭이 최근 목표에 가깝다(능동·we 허용) — CSBL-VOICE-01
 
@@ -34,19 +34,30 @@
 - [ ] significant마다 통계 근거가 같은 문장에 있다 **(기계)** — CSBL-SIG-01
 - [ ] 우선권·감탄 부스터가 없다 **(기계)** — CSBL-BOOST-01
 - [ ] 예측 결과에 검증 전 demonstrate·confirm을 쓰지 않았다 — CSBL-HEDGE-02
-- [ ] 40단어를 넘는 문장은 한 메시지인지 확인했다 — CSBL-SENT-01
+- [ ] 40단어를 넘는 문장, 또는 논리·명확 점수가 임계 미만인 문장은 한 메시지인지 확인하고 고쳤다 — CSBL-SENT-01
+- [ ] 단락의 중간 문장도 첫·끝과 같이 명확·간결·논리적으로 재작성했다 — CSBL-PROSE-01
+- [ ] 문장 사이 연결이 분명하다 (CONN-01은 결과 단락에도 적용) — CSBL-CONN-01
+- [ ] 본문 단락 100%를 채점했고, 임계 미만 단락을 다시 고쳤다 — CSBL-SCORE-01, CSBL-COVER-01
 
 ## 5. 고찰·결론
+- [ ] 별도 Discussion 제목이 없는 통합 절이면, 해석 문장과 한계 단락에 DISC-01/02와 점수표를 적용했다 — CSBL-DISC-01, CSBL-DISC-02, CSBL-COVER-01
 - [ ] 첫머리에서 연구를 한 문장으로 다시 요약한다 — CSBL-DISC-01
 - [ ] 해석 헤지가 suggest·indicate 중심이고, 교정으로 주장이 강해지지 않았다 — CSBL-HEDGE-01, CSBL-INTEG-01
 - [ ] 한계가 후반에 있고 Although … / It should be noted that으로 열린다 — CSBL-DISC-02
 - [ ] 연결어를 나열하지 않고 These/This로 이어받는다 — CSBL-CONN-01
+- [ ] 본문 단락 100%를 채점했고, 임계 미만 단락을 다시 고쳤다 — CSBL-SCORE-01, CSBL-COVER-01
 
 ## 6. 방법
-- [ ] 수동 중심이고 we가 거의 없다. 태를 기계적으로 바꾸지 않는다 — CSBL-VOICE-01
+- [ ] 과거 시제·수동 중심이고 we가 거의 없다. 태를 기계적으로 바꾸지 않는다 — CSBL-VOICE-01, CSBL-PART-01
 - [ ] 단위·철자가 저널 양식과 같다 — CSBL-UNIT-01
+
+## 6.1 그림·표 범례
+- [ ] 간결한 명사구 또는 짧은 절이고, 패널·조건·n·통계 정의가 있으며 긴 논의가 없다 — CSBL-LEGEND-01
+- [ ] 수치가 본문과 같다 — CSBL-INTEG-01
+- [ ] 범례 항목 100%를 채점했고 임계 미만을 다시 고쳤다 — CSBL-COVER-01, CSBL-SCORE-01
 
 ## 7. 마무리
 - [ ] 변경 기록 표의 모든 행에 rule_id가 있다(`lab-lint` `style/edit-rule-id` 오류 0) — CSBL-EDIT-01
 - [ ] 새 숫자·인용·고유명사·주장 강화가 없다(원문 대조) — CSBL-INTEG-01
-- [ ] 고치지 않은 경고는 이유를 적었다
+- [ ] 초록·서론·방법·결과·고찰·결론 본문 단락과 그림·표 범례를 파트별 문체로 채점 100%, 문단 합격(또는 사실 공란 질문 + 표현 합격) 100%. 일부 파트만 손본 것은 불합격 — CSBL-COVER-01, CSBL-SCORE-01, CSBL-PART-01
+- [ ] 건너뛴 기계 경고(표기 예외)만 이유를 적었다. 품질 미달을 이유만 적고 남겨 두지 않았다

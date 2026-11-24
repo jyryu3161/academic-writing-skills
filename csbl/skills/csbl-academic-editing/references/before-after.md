@@ -2,7 +2,7 @@
 
 - 아래 문장은 이 스킬을 위해 **새로 쓴 가상의 예**다. 실제 논문·코퍼스·원고 문장이 아니며, 숫자·유전자·데이터셋 이름도 지어낸 것이다.
 - 형식: 원문 → 수정, 그리고 적용한 rule_id. 실제 교정에서도 이렇게 한 행에 rule_id를 적는다.
-- 수정은 의미·수치·주장 강도를 바꾸지 않는 범위에서만 한다(CSBL-INTEG-01).
+- 수정은 사실(수치·방향·인용·고유명사)과 주장 강도를 바꾸지 않는 범위에서 한다(CSBL-INTEG-01). 같은 사실을 더 명확·간결·논리적으로 쓰는 재작성은 필수다(CSBL-PROSE-01).
 
 ## 그림 참조 — CSBL-FIG-01
 - 원문: As shown in Figure 3b, the knockout strain grew more slowly on xylose.
@@ -71,3 +71,18 @@
 | E-01 | Results ¶3 첫 문장 | We deleted … | To test whether … | CSBL-RES-01, CSBL-RES-02 | 단락 목적을 먼저 |
 | E-02 | Results ¶3 끝 | This proves … | These results suggest … | CSBL-RES-03, CSBL-HEDGE-01 | 주장 약화 |
 | E-03 | Methods ¶2 | the the | the | CORE-LANG-05 | 중복 단어 |
+
+## 결과 단락 중간 문장 — CSBL-PROSE-01, CSBL-RES-04, CSBL-RES-05
+- 원문: The treated cells showed an increase in the secretion of the metabolite after induction for 6 h and the concentration reached 18.6 mg/L, which was measured in three biological replicates.
+- 수정: After 6 h of induction, treated cells secreted 18.6 mg/L of the metabolite (n = 3 biological replicates).
+- 주의: 6 h, 18.6 mg/L, 세 반복은 그대로다. 조건은 괄호로 내리고 주절은 구체 동사 하나로 둔다. 중간 문장도 첫·끝과 같이 고친다.
+
+## 통합 절의 해석 문장 — CSBL-PROSE-01, CSBL-HEDGE-01, CSBL-SENT-01
+- 원문: These results suggest that the ranking module contributed to the higher recovery, and, because the same trend was seen in both hold-out sets, it is possible to conclude in addition that the module may also be applied without further change to other screening campaigns of a similar type.
+- 수정: These results suggest that the ranking module contributed to the higher recovery. The same trend in both hold-out sets indicates that the module may apply to similar screening campaigns.
+- 주의: suggest를 demonstrate로 올리지 않는다. 장황한 중문을 두 문장으로 나누되 새 수치·새 주장은 넣지 않는다.
+
+## 그림 범례 — CSBL-LEGEND-01
+- 원문: Figure 2. This figure clearly demonstrates that the mutant grew much faster than the parent after 24 h, which proves that the transporter is essential, and error bars are also shown.
+- 수정: Figure 2. Growth of the mutant and the parent after 24 h (mean ± s.d., n = 3 biological replicates).
+- 주의: 원문에 있던 24 h와 비교 대상만 남긴다. 'proves/demonstrates'로 강화하지 않고, 해석은 본문에 둔다. n이 원문 범례에 없으면 새로 만들지 말고 저자 질문에 적는다.

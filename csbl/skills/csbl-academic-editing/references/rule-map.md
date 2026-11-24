@@ -33,6 +33,11 @@
 | CSBL-CONN-01 | 판단 | — | CORE-LANG-10, CORE-LANG-22, CORE-LANG-23 | rpws:research-paper-writing/references/does-my-writing-flow-source.md |
 | CSBL-UNIT-01 | 판단 | — | CORE-LANG-01, CORE-LANG-07 | upstream:skills/academic-writing-skills/references/figures-tables-and-supplements.md |
 | CSBL-INTEG-01 | 판단 | — | CORE-DISC-04, CORE-INTRO-10 | upstream:skills/academic-writing-skills/references/universal-integrity.md<br>upstream:skills/academic-writing-skills/references/comment-scoped-revision.md |
+| CSBL-PROSE-01 | 판단 | — | CORE-LANG-09, CORE-LANG-10, CORE-LANG-13 | upstream:skills/academic-writing-skills/references/prose-and-citation-editing.md<br>rpws:research-paper-writing/references/does-my-writing-flow-source.md |
+| CSBL-SCORE-01 | 판단 | — | — | upstream:skills/academic-writing-skills/references/comment-scoped-revision.md |
+| CSBL-COVER-01 | 기계 | style/score-coverage | — | upstream:skills/academic-writing-skills/references/results-and-explanation.md<br>upstream:skills/academic-writing-skills/references/discussion-and-limitations.md |
+| CSBL-PART-01 | 판단 | — | CORE-LANG-04, CORE-LANG-09 | upstream:skills/academic-writing-skills/references/prose-and-citation-editing.md |
+| CSBL-LEGEND-01 | 판단 | — | CORE-RES-13, CORE-RES-14, CORE-RES-20 | upstream:skills/academic-writing-skills/references/figures-tables-and-supplements.md |
 
 ## manuscript_eval rubric → rule_id (역방향)
 
@@ -55,11 +60,13 @@
 | CORE-INTRO-10 | CSBL-INTEG-01 |
 | CORE-INTRO-12 | CSBL-INTRO-01 |
 | CORE-LANG-01 | CSBL-LANG-01, CSBL-UNIT-01 |
+| CORE-LANG-04 | CSBL-PART-01 |
 | CORE-LANG-07 | CSBL-UNIT-01 |
 | CORE-LANG-08 | CSBL-SIG-01 |
-| CORE-LANG-09 | CSBL-RES-01, CSBL-RES-02 |
-| CORE-LANG-10 | CSBL-STOCK-01, CSBL-RES-04, CSBL-CONN-01 |
+| CORE-LANG-09 | CSBL-RES-01, CSBL-RES-02, CSBL-PROSE-01, CSBL-PART-01 |
+| CORE-LANG-10 | CSBL-STOCK-01, CSBL-RES-04, CSBL-CONN-01, CSBL-PROSE-01 |
 | CORE-LANG-11 | CSBL-RES-05 |
+| CORE-LANG-13 | CSBL-PROSE-01 |
 | CORE-LANG-14 | CSBL-SENT-01 |
 | CORE-LANG-15 | CSBL-SENT-01 |
 | CORE-LANG-16 | CSBL-SENT-01 |
@@ -70,3 +77,6 @@
 | CORE-LANG-23 | CSBL-CONN-01 |
 | CORE-LANG-24 | CSBL-BOOST-01 |
 | CORE-RES-02 | CSBL-FIG-01, CSBL-RES-01, CSBL-RES-02, CSBL-RES-03 |
+| CORE-RES-13 | CSBL-LEGEND-01 |
+| CORE-RES-14 | CSBL-LEGEND-01 |
+| CORE-RES-20 | CSBL-LEGEND-01 |
